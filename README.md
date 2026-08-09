@@ -45,6 +45,7 @@
 git clone https://github.com/dev12124/Firmware.git
 
 cd Firmware
+
 # Git workflow examples
 git branch feature/novo-recurso
 
