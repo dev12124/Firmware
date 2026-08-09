@@ -24,7 +24,7 @@
 
 **Version Control: Git & GitHub Desktop & Github.com**
 
-**ENTRY: Discord Server. Name of Server: Programming.**
+**ENTRY: Discord Server. Name of Server: Devs Studio.**
 
 **Server-Discord: https://discord.gg/88hUjybuY5**
 
