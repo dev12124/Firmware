@@ -40,7 +40,7 @@
 **Windows Command Line environment (build.bat execution support)**
 
 ### Building
-'''bash
+```bash
 # Clone the repository
 git clone https://github.com/dev12124/Firmware.git
 
