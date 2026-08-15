@@ -12,6 +12,7 @@ SECTIONS
         *(.data)
     }
     .bss ALIGN(4K) : {
+        *(COMMON)
         *(.bss)
     }
 }
