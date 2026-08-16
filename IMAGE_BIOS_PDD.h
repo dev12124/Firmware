@@ -90,7 +90,7 @@ void ConfIgDisp(Devices* Disp) {
 void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Devices* Disp) {
     // 1. Validation of Architecture
     if (Header->architecture == ARCH_X86_64) {
-        // Valide
+        // Valid
     } else {
         while (1) {
             __asm__ __volatile__("cli; hlt");
@@ -98,7 +98,7 @@ void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Devices* Disp) {
     }
     // 2. Size of Header: Check
     if (Header->header_size == sizeof(IMAGE_BIOS_PDD_HEADER)) {
-        //  Valide
+        //  Valid
     } else {
         while (1) {
             __asm__ __volatile__("cli; hlt");
@@ -116,7 +116,7 @@ void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Devices* Disp) {
             : "memory"
         );
     } else {
-        // Valide
+        // Valid
     }
     // 4. Configurations of Devices
     ConfigDisp(Disp);
