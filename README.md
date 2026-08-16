@@ -11,6 +11,8 @@
 
 **Basic Configurations: Configure Display parameters and input device responsiveness (Sensibility, DPI, and status flags).**
 
+**Memory Map: Have a Simple Memory Region: base_low, base_high, length_low, lenght_high and the type.**
+
 **Freestanding Runtime Environment: Zero dependencies on standard C libraries (nostdlib).**
 
 ### 🛠️ Toolchain & Environment
