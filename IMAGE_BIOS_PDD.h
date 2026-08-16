@@ -105,7 +105,7 @@ void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Devices* Disp) {
         }
     }
     // 3. ACPI Validation 
-    ACPI_RSDP* rsdp = (ACPI_RSDP8)Header->rsdp_pointer;
+    ACPI_RSDP* rsdp = (ACPI_RSDP*)Header->rsdp_pointer;
     // --- RSDP Calculation ---
     if (CalculateChecksum(rsdp, sizeof(ACPI_RSDP)) != 0) {
         Header->flags = 0x0000000000000E;
