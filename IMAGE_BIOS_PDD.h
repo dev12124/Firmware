@@ -77,7 +77,7 @@ typedef struct {
     uint64 MouseUSB;
     uint64 KeyboardUSB;
 } Devices;
-void ConfIgDisp(Devices* Disp) {
+void ConfigDisp(Devices* Disp) {
     // 1. Configurations of Dispositives
     Disp->Screen = "Display 1920x720";  // Resolution
     Disp->Touchpad = 540;  // Sensibility 
