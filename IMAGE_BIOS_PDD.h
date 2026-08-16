@@ -112,7 +112,7 @@ void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Devices* Disp) {
         __asm__ __volatile__ (
             "mov %0, %%cr3\n\t"
             :
-            : "r" (Header->flags)
+            : "r" ((unsigned long long)Header->flags)
             : "memory"
         );
     } else {
