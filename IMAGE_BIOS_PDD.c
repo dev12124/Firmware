@@ -3,7 +3,7 @@
 // START FIRMWARE
 // =====================
 Dispositives dispositives;
- void FirmwareStart() {
+void FirmwareStart() {
     // 1. POST: Initializate
     InitPOST(&bios_header, &dispositives);
     while (1) {
