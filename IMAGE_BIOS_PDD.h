@@ -118,7 +118,7 @@ void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Devices* Disp) {
     } else {
         // Valide
     }
-    // 4. Configurations of Dispositives
+    // 4. Configurations of Devices
     ConfigDisp(Disp);
     // 5. Header flags: POST Concluded
     Header->flags |= 0x1;

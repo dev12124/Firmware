@@ -3,8 +3,8 @@
 // START FIRMWARE
 // =====================
 Devices devices;
-void FirmwareStart() {
-    // 1. POST: Initializate
+void FirmwareStart(void) {
+    // 1. POST: Initialize
     InitPOST(&bios_header, &devices);
     while (1) {
         __asm__ __volatile__("cli; hlt");
