@@ -3,7 +3,7 @@ SHELL := cmd.exe
 all: build
 
 build:
-	call C:\Firmware\build.bat
+	call C:\Users\md\Documents\Github\Firmware\build.bat
 
 clean:
 	@rm -f * .o * .exe * .bin
