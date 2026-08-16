@@ -120,6 +120,6 @@ void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Dispositives* Disp) {
     }
     // 4. Configurations of Dispositives
     ConfDisp(Disp);
-    // 5. Header flags: POST Concluided
+    // 5. Header flags: POST Concluded
     Header->flags |= 0x1;
 }
