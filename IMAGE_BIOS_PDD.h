@@ -69,7 +69,7 @@ typedef struct __attribute__((packed)) {
     uint32 type;
 } MemoryRegion;
 // =====================
-// DISPOSITIVOS BÁSICOS
+// BASIC DEVICES
 // =====================
 typedef struct {
     const char* Screen;
