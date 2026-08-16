@@ -4,5 +4,5 @@ set LD=ld.lld
 set CFLAGS=--target=x86_64-elf -ffreestanding -fno-builtin -Wall -Wextra -fno-exceptions -fno-rtti -mno-red-zone -nostdlib -I.
 set LDFLAGS=-m elf_x86_64 -T linker.ld
 llvm-objcopy -0 binary IMAGE_BIOS_PDD.exe IMAGE_BIOS_PDD.bin
-%CC% %CFLAGS% -c IMAGE_BIOS_PDD.c -o IMAGE_BIOS_PDD.o && %LD% %LDFLAGS% IMAGE_BIOS_PDD.o -o IMAGE_BIOS_PDD.exe
-    echo sucessfully generated!
+%CC% %CFLAGS% -c IMAGE_BIOS_PDD.c -o IMAGE_BIOS_PDD.o && %LD% %LDFLAGS% IMAGE_BIOS_PDD.o -o IMAGE_BIOS_PDD.exe && llvm-objcopy -0 binary IMAGE_BIOS_PDD.exe IMAGE_BIOS_PDD.bin
+    echo successfully generated!
