@@ -2,10 +2,10 @@
 // =====================
 // START FIRMWARE
 // =====================
-Dispositives dispositives;
+Devices devices;
 void FirmwareStart() {
     // 1. POST: Initializate
-    InitPOST(&bios_header, &dispositives);
+    InitPOST(&bios_header, &devices);
     while (1) {
         __asm__ __volatile__("cli; hlt");
     }

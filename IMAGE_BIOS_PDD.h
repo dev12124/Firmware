@@ -36,7 +36,7 @@ IMAGE_BIOS_PDD_HEADER bios_header = {
 // ====================================================================
 // ACPI
 // ====================================================================
-// Base Structure / Estrutura Básica (RSDP)
+// Base Structure (RSDP)
 typedef struct __attribute__((packed)) {
     uint8 signature[8];
     uint8 checksum;
@@ -48,7 +48,7 @@ typedef struct __attribute__((packed)) {
     uint8 extended_checksum;
     uint8 reserved[3];
 } ACPI_RSDP;
-// Function: Calculate Checksum / Função que calcula o Checksum
+// Function to Calculate Checksum 
 uint8 CalculateChecksum(const void* address, uint32 size) {
     const uint8* bytes = (const uint8*)address;
     uint8 sum = 0;
@@ -58,9 +58,9 @@ uint8 CalculateChecksum(const void* address, uint32 size) {
     return sum;
 }
 // ========================================================================
-// MEMORY MAP / MAPA DE MEMÓRIA
+// MEMORY MAP 
 // ========================================================================
-// Base Structure / Estrutura Base
+// Base Structure 
 typedef struct __attribute__((packed)) {
     uint32 base_low;
     uint32 base_high;
@@ -76,10 +76,10 @@ typedef struct {
     uint64 Touchpad;
     uint64 MouseUSB;
     uint64 KeyboardUSB;
-} Dispositives;
-void ConfDisp(Dispositives* Disp) {
+} Devices;
+void ConfIgDisp(Devices* Disp) {
     // 1. Configurations of Dispositives
-    Disp->Screen = "Pantalla 1920x720";  // Resolution
+    Disp->Screen = "Display 1920x720";  // Resolution
     Disp->Touchpad = 540;  // Sensibility 
     Disp->MouseUSB = 570;  // DPI (Sensibility of Mouse)
     Disp->KeyboardUSB = 1; // True (1)
@@ -87,7 +87,7 @@ void ConfDisp(Dispositives* Disp) {
 // =======
 // POST
 // =======
-void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Dispositives* Disp) {
+void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Devices* Disp) {
     // 1. Validation of Architecture
     if (Header->architecture == ARCH_X86_64) {
         // Valide
@@ -106,7 +106,7 @@ void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Dispositives* Disp) {
     }
     // 3. ACPI Validation 
     ACPI_RSDP* rsdp = (ACPI_RSDP8)Header->rsdp_pointer;
-    // --- RSDP Calculation --- / --- Calcular RSDP ---
+    // --- RSDP Calculation ---
     if (CalculateChecksum(rsdp, sizeof(ACPI_RSDP)) != 0) {
         Header->flags = 0x0000000000000E;
         __asm__ __volatile__ (
@@ -119,7 +119,7 @@ void InitPOST(IMAGE_BIOS_PDD_HEADER* Header, Dispositives* Disp) {
         // Valide
     }
     // 4. Configurations of Dispositives
-    ConfDisp(Disp);
+    ConfigDisp(Disp);
     // 5. Header flags: POST Concluded
     Header->flags |= 0x1;
 }
